@@ -1,0 +1,59 @@
+@import url("https://effortlessui.netlify.app/base.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.banner__container {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 150px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.banner__heading1 {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 480px) {
+  .banner__container {
+    height: 200px;
+  }
+  .banner__heading1 {
+      font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .banner__container {
+    height: 250px;
+  }
+  .banner__heading1 {
+      font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .banner__container {
+    height: 450px;
+  }
+}
+
+.icon-button {
+  position: absolute;
+  background-color: #ebecf0;
+}
+
+.btn1 {
+  left: 0;
+  top: 40%;
+}
+
+.btn2 {
+  right: 0;
+  top: 40%;
+}

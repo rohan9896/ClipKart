@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.EmptyCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  margin: 3rem;
+}
+
+.EmptyCart > img {
+  width: 216px;
+}
+
+.EmptyCart__line1 {
+  font-weight: 900;
+}
+
+@media screen and (min-width: 768px) {
+  .EmptyCart > img {
+    width: 324px;
+  }
+}

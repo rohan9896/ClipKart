@@ -61,6 +61,7 @@ function BottomNav() {
                     backgroundColor: selected === item.name ? "black" : null,
                     color: selected === item.name ? "white" : null,
                     padding: selected === item.name ? "0.2rem 0.4rem" : null,
+                    borderRadius: "0.5rem"
                   }}
                 >
                   {item.name}
