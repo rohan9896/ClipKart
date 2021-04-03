@@ -6,7 +6,7 @@ const bottomNav = [
     id: 1,
     img:
       "https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/8dde3b65380a2432ffc94bd652634054117b0159/icons/ecomm/home.svg",
-    name: "Home",
+    name: "Shop",
     quantity: "",
   },
   {
@@ -33,7 +33,7 @@ const bottomNav = [
 ];
 
 function BottomNav() {
-  const [selected, setSelected] = useState("Home");
+  const [selected, setSelected] = useState("Shop");
 
   return (
     <>
