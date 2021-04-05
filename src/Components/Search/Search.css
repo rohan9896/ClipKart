@@ -1,7 +1,8 @@
 @import url("https://effortlessui.netlify.app/base.css");
 
-.icon-button {
+.search-btn {
   background-color: #ebecf0;
+  border: none;
 }
 
 .search__input {

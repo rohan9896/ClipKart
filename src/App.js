@@ -10,12 +10,13 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      {/* <BottomNav /> */}
-      {/* <Search /> */}
+      
+      <Search />
       <Banner />
 
       <EmptyCartPage />
       <Footer />
+      {/* <BottomNav /> */}
     </div>
   );
 }

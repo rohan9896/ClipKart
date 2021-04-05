@@ -5,9 +5,9 @@ const bannersArr = [
   {
     name: "",
     img:
-      "https://media.istockphoto.com/vectors/pink-glow-neon-flash-sale-banner-vector-id1196582391?k=6&m=1196582391&s=612x612&w=0&h=v62trxgnIwn3o6v_WF4TglzPIaVlW0nlxNJwUas-qds=",
-    heading1: "",
-    heading2: "",
+      "https://images.unsplash.com/photo-1521080755838-d2311117f767?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1129&q=80",
+    heading1: "ClipKart's Biggest Trillion Day's",
+    heading2: "Sale ends on 31 April",
   },
   {
     name: "",

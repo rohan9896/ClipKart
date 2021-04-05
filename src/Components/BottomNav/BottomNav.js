@@ -58,10 +58,8 @@ function BottomNav() {
                 </div>
                 <p
                   style={{
-                    backgroundColor: selected === item.name ? "black" : null,
-                    color: selected === item.name ? "white" : null,
-                    padding: selected === item.name ? "0.2rem 0.4rem" : null,
-                    borderRadius: "0.5rem"
+                    color: selected === item.name ? "rgb(20, 110, 180)" : null,
+                    fontWeight: selected === item.name ? "1000" : null
                   }}
                 >
                   {item.name}
