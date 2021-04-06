@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-.EmptyCart {
+.EmptyContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,16 +10,16 @@
   margin: 3rem;
 }
 
-.EmptyCart > img {
+.EmptyContainer > img {
   width: 216px;
 }
 
-.EmptyCart__line1 {
+.EmptyContainer__line1 {
   font-weight: 900;
 }
 
 @media screen and (min-width: 768px) {
-  .EmptyCart > img {
+  .EmptyContainer > img {
     width: 324px;
   }
 }

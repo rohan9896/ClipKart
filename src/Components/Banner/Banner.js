@@ -70,8 +70,11 @@ function Banner() {
             />
           </button>
         </div>
+        <div className="banner__info">
         <p className="banner__heading1">{banner.heading1}</p>
         <p className="banner__heading2">{banner.heading2}</p>
+        <button style={{color: "black"}} className="primary-button">Shop Now</button>
+        </div>
       </div>
     </>
   );

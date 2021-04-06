@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://effortlessui.netlify.app/base.css");
+
+.card2 {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  background-color: #f0f0f0;
+  width: fit-content;
+  padding: 0.3rem;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.card2 > img {
+  max-width: 20rem;
+  height: 15rem;
+  border-radius: 1rem;
+}
+
+.cross {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: 900;
+  font-size: larger;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(49, 44, 44);
+  color: white;
+  border-radius: 50%;
+}
+
+.Wishlist__List {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}

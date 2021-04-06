@@ -1,8 +1,8 @@
 @import url("https://effortlessui.netlify.app/base.css");
-@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Monoton&family=Nanum+Pen+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
 
 .ecom__nav {
-  font-family: "Coming Soon", cursive;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 800;
   display: flex;
   justify-content: space-between;
