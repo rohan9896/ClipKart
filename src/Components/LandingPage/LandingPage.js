@@ -1,5 +1,4 @@
 import React from 'react'
-import "./LandingPage.css"
 import Banner from "../Banner/Banner"
 import LessProductsGrid from "../LessProductsGrid/LessProductsGrid"
 import {landingPageData} from "../../data/faker-landingPageData"

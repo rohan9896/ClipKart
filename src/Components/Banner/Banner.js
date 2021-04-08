@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Banner.css";
+import { useNavigate } from 'react-router-dom';
 
 const bannersArr = [
   {
@@ -27,8 +28,7 @@ const bannersArr = [
 
 function Banner() {
   const [banner, setBanner] = useState(bannersArr[1]);
-
-  // useEffect(() => {});
+  let navigate = useNavigate();
 
   const handleForwardClick = () => {
     let indexOfCurrentBanner = bannersArr.indexOf(banner);
@@ -73,7 +73,7 @@ function Banner() {
         <div className="banner__info">
         <p className="banner__heading1">{banner.heading1}</p>
         <p className="banner__heading2">{banner.heading2}</p>
-        <button style={{color: "black"}} className="primary-button">Shop Now</button>
+        <button style={{color: "black"}} className="primary-button" onClick={() => navigate(`/products`)}>Shop Now</button>
         </div>
       </div>
     </>

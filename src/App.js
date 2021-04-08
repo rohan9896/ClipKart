@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar/NavBar";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import BottomNav from "./Components/BottomNav/BottomNav";
+import WishListPage from "./Components/WishlistPage/WishListPage"
 
 function App() {
   return (
@@ -23,6 +24,37 @@ function App() {
             <>
               <NavBar />
               <h1>Products will come here..</h1>
+              <BottomNav />
+            </>
+          }
+        />
+        <Route
+          path="/categories"
+          element={
+            <>
+              <NavBar />
+              <h1>Categories will go here...</h1>
+              <BottomNav />
+            </>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <>
+              <NavBar />
+              <h1>Cart will come here...</h1>
+              <BottomNav />
+            </>
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            <>
+              <NavBar />
+              {/* <h1>Wishlist will come here</h1> */}
+              <WishListPage />
               <BottomNav />
             </>
           }
