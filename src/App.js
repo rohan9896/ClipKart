@@ -4,6 +4,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import BottomNav from "./Components/BottomNav/BottomNav";
 import WishListPage from "./Components/WishlistPage/WishListPage"
+import ProductsPage from "./Components/ProductsPage/ProductsPage";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           element={
             <>
               <NavBar />
-              <h1>Products will come here..</h1>
+              <ProductsPage />
               <BottomNav />
             </>
           }

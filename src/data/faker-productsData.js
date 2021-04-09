@@ -39,6 +39,7 @@ function generateProductsData() {
           4,
           4.5,
         ]),
+        popularity: faker.datatype.number(100)
       },
     ];
   }
