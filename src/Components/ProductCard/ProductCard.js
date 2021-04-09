@@ -12,7 +12,6 @@ function ProductCard({
   img,
   category,
   rating,
-  popularity
 }) {
   return (
     <div key={id} className="card">
@@ -24,7 +23,6 @@ function ProductCard({
       />
       <div className="productInfo">
         <p className="name">{name}</p>
-        <p>{popularity}</p>
         <small className="description">{description}</small>
         <p className="category"><b>Category: {category}</b></p>
         <small className="ratings"><b>Rating: {rating}/5 </b></small>
