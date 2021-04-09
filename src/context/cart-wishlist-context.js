@@ -14,7 +14,15 @@ const wishlistArr = [];
 // const containsInCart = (product) =>
 //   state.cartArr.some((item) => item.id === product.id);
 
-const cartWishlistReducerFunc = () => {}
+const cartWishlistReducerFunc = (state, action) => {
+  // switch (action.type) {
+  //   case "":
+      
+  
+  //   default:
+  //     return;
+  // }
+}
 
 export default function CartWishListContextProvider({ children }) {
   const [state, dispatch] = useReducer(cartWishlistReducerFunc, {
