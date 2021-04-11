@@ -1,16 +1,20 @@
 import React from 'react'
 import "./ProductsPage.css"
-import {productsData} from "../../data/faker-productsData"
 import Heading from '../Heading/Heading'
 import ProductCard from '../ProductCard/ProductCard'
+import {useCartWishlist} from "../../context/cart-wishlist-context"
+
 
 function ProductsPage() {
+
+    const {state} = useCartWishlist();
+
     return (
         <>
             <Heading text="ALL PRODUCTS" />
             <div className="ProductsPage__List">
                 {
-                    productsData.map( product => {
+                    state.productsArr.map( product => {
                         return (
                             <ProductCard {...product} />
                         )

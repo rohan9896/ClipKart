@@ -11,8 +11,10 @@ function generateProductsData() {
         id: faker.datatype.uuid(),
         name: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
-        price: faker.commerce.price(),
+        price: parseInt(faker.commerce.price()),
         inStock: faker.datatype.boolean(),
+        quantity: 1,
+        wishlisted: false,
         isNew: faker.datatype.boolean(),
         img: faker.image.image(),
         category: faker.random.arrayElement([
