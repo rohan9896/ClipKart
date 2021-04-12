@@ -12,8 +12,8 @@ function generateLandingPageData() {
         id: faker.datatype.uuid(),
         name: faker.commerce.productName(),
         price: faker.commerce.price(),
-        img: faker.image.image(),
-      },
+        img: faker.image.image()
+      }
     ];
     trendingBrands = [
       ...trendingBrands,
@@ -21,17 +21,23 @@ function generateLandingPageData() {
         id: faker.datatype.uuid(),
         brand: faker.company.companyName(),
         img: faker.image.image(),
-        discountPercent:
-          faker.random.arrayElement([
-            10, 20, 30, 40, 50, 60, 70, 80, 90
-          ]),
-      },
+        discountPercent: faker.random.arrayElement([
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90
+        ])
+      }
     ];
   }
-  return {biggestDeals, trendingBrands}
+  return { biggestDeals, trendingBrands };
 }
 
 export const landingPageData = generateLandingPageData();
 
 console.log(landingPageData);
-

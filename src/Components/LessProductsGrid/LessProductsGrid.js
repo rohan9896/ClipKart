@@ -14,12 +14,18 @@ function LessProductsGrid({ item, heading, trendingBrands }) {
               <div key={product.id} className="card2">
                 <LazyLoadImage
                   effect="blur"
-                  style={{ width: "18rem" ,maxWidth: "100%", height: "15rem" }}
+                  style={{ width: "18rem", maxWidth: "100%", height: "15rem" }}
                   alt="prod"
                   src={product.img}
                 />
-                <span className="card2__brand">{trendingBrands ? `${product.brand}` : `${product.name}`  }</span>
-                <span>{trendingBrands ? `Upto ${product.discountPercent}% OFF` : `Discount Price: ₹${product.price}`}</span>
+                <span className="card2__brand">
+                  {trendingBrands ? `${product.brand}` : `${product.name}`}
+                </span>
+                <span>
+                  {trendingBrands
+                    ? `Upto ${product.discountPercent}% OFF`
+                    : `Discount Price: ₹${product.price}`}
+                </span>
               </div>
             );
           })}

@@ -11,7 +11,7 @@ function generateProductsData() {
         id: faker.datatype.uuid(),
         name: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
-        price: parseInt(faker.commerce.price()),
+        price: Number(faker.commerce.price()),
         inStock: faker.datatype.boolean(),
         quantity: 1,
         wishlisted: false,
@@ -20,15 +20,15 @@ function generateProductsData() {
         category: faker.random.arrayElement([
           "Men's fashion",
           "Women's fashion",
-          "Accesories",
+          "Accessories",
           "Bags and Bagpacks",
           "Gadgets",
           "Sports and Active Wear",
           "Home decor",
           "Boy's Footwear",
-          "Girl's Footewear",
+          "Girl's Footwear",
           "Kids",
-          "Infants",
+          "Infants"
         ]),
         rating: faker.random.arrayElement([
           0.5,
@@ -39,10 +39,10 @@ function generateProductsData() {
           3,
           3.5,
           4,
-          4.5,
+          4.5
         ]),
         popularity: faker.datatype.number(100)
-      },
+      }
     ];
   }
   return productsData;

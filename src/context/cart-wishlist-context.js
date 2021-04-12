@@ -14,7 +14,7 @@ const actionTypes = {
   DECREASE_QUANTITY: "DECREASE_QUANTITY",
   ADD_TO_WISHLIST: "ADD_TO_WISHLIST",
   REMOVE_FROM_WISHLIST: "REMOVE_FROM_WISHLIST",
-  MOVE_TO_CART_FROM_WISHLIST: "MOVE_TO_CART_FROM_WISHLIST",
+  MOVE_TO_CART_FROM_WISHLIST: "MOVE_TO_CART_FROM_WISHLIST"
 };
 
 const cartWishlistReducerFunc = (state, action) => {
@@ -29,15 +29,15 @@ const cartWishlistReducerFunc = (state, action) => {
                 (product) => product.id === action.payload
               )
             )
-          ),
-        ],
+          )
+        ]
       };
     case actionTypes.REMOVE_FROM_CART:
       return {
         ...state,
         cartArr: state.cartArr.filter(
           (product) => product.id !== action.payload
-        ),
+        )
       };
     case actionTypes.INCREASE_QUANTITY:
       return {
@@ -46,7 +46,7 @@ const cartWishlistReducerFunc = (state, action) => {
           product.id === action.payload
             ? { ...product, quantity: product.quantity + 1 }
             : product
-        ),
+        )
       };
     case actionTypes.DECREASE_QUANTITY:
       return {
@@ -55,7 +55,7 @@ const cartWishlistReducerFunc = (state, action) => {
           product.id === action.payload
             ? { ...product, quantity: product.quantity - 1 }
             : product
-        ),
+        )
       };
     case actionTypes.ADD_TO_WISHLIST:
       return {
@@ -67,7 +67,7 @@ const cartWishlistReducerFunc = (state, action) => {
           product.id === action.payload
             ? { ...product, wishlisted: !product.wishlisted }
             : product
-        ),
+        )
       };
     case actionTypes.REMOVE_FROM_WISHLIST:
       return {
@@ -79,7 +79,7 @@ const cartWishlistReducerFunc = (state, action) => {
           product.id === action.payload
             ? { ...product, wishlisted: false }
             : product
-        ),
+        )
       };
     case actionTypes.MOVE_TO_CART_FROM_WISHLIST:
       return {
@@ -94,13 +94,13 @@ const cartWishlistReducerFunc = (state, action) => {
                 (product) => product.id === action.payload
               )
             )
-          ),
+          )
         ],
         productsArr: state.productsArr.map((product) =>
           product.id === action.payload
             ? { ...product, wishlisted: false }
             : product
-        ),
+        )
       };
     default:
       return;
@@ -111,7 +111,7 @@ export default function CartWishListContextProvider({ children }) {
   const [state, dispatch] = useReducer(cartWishlistReducerFunc, {
     productsArr,
     cartArr,
-    wishlistArr,
+    wishlistArr
   });
 
   // const containsInWishlist = (id) =>
@@ -124,7 +124,7 @@ export default function CartWishListContextProvider({ children }) {
       value={{
         state,
         dispatch, //state setter function
-        containsInCart, //returns function which takes product id as argument
+        containsInCart //returns function which takes product id as argument
       }}
     >
       {children}

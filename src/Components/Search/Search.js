@@ -1,5 +1,5 @@
 import React from "react";
-import './Search.css'
+import "./Search.css";
 
 function Search() {
   return (
@@ -10,7 +10,13 @@ function Search() {
           className="primaryInput focus"
           placeholder="Search For Products"
         />
-        <button className="search-btn"><h3>🔍</h3></button>
+        <button className="search-btn">
+          <h3>
+            <span role="img" aria-label="search">
+              🔍
+            </span>
+          </h3>
+        </button>
       </div>
     </>
   );

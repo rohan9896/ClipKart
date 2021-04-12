@@ -4,10 +4,10 @@ import Heading from "../Heading/Heading";
 import { useCartWishlist } from "../../context/cart-wishlist-context";
 
 function CartPage() {
-  const { state, dispatch} = useCartWishlist();
+  const { state, dispatch } = useCartWishlist();
 
   const totalPriceInCart = state.cartArr?.reduce((accumulatePrice, product) => {
-    return accumulatePrice + (product.price * product.quantity);
+    return accumulatePrice + product.price * product.quantity;
   }, 0);
 
   return (
@@ -24,15 +24,41 @@ function CartPage() {
                       <img src={img} alt="prod" />
                       <div className="CartCard__Middle">
                         <div className="CartCard__Details">
-                          <span style={{fontWeight: "900"}}>{name}</span>
+                          <span style={{ fontWeight: "900" }}>{name}</span>
                           <small>{description}</small>
                         </div>
                         <div className="CartCard__PlusMinusBtn">
-                          <button onClick={() => dispatch({type: "INCREASE_QUANTITY", payload: id})}>+</button>
+                          <button
+                            onClick={() =>
+                              dispatch({
+                                type: "INCREASE_QUANTITY",
+                                payload: id
+                              })
+                            }
+                          >
+                            +
+                          </button>
                           <span>{quantity}</span>
-                          <button onClick={() => dispatch({type: quantity === 1 ? "REMOVE_FROM_CART" : "DECREASE_QUANTITY", payload: id})}>-</button>
+                          <button
+                            onClick={() =>
+                              dispatch({
+                                type:
+                                  quantity === 1
+                                    ? "REMOVE_FROM_CART"
+                                    : "DECREASE_QUANTITY",
+                                payload: id
+                              })
+                            }
+                          >
+                            -
+                          </button>
                         </div>
-                        <button onClick={() => dispatch({type: "REMOVE_FROM_CART", payload: id})} className="primary-button red remove-btn">
+                        <button
+                          onClick={() =>
+                            dispatch({ type: "REMOVE_FROM_CART", payload: id })
+                          }
+                          className="primary-button red remove-btn"
+                        >
                           Remove item
                         </button>
                       </div>

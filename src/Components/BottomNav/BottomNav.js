@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./BottomNav.css";
-import { useNavigate } from 'react-router-dom';
-import {useCartWishlist} from "../../context/cart-wishlist-context"
+import { useNavigate } from "react-router-dom";
+import { useCartWishlist } from "../../context/cart-wishlist-context";
 
 function BottomNav() {
   const [selected, setSelected] = useState("Shop");
   let navigate = useNavigate();
-  const {state} = useCartWishlist();
+  const { state } = useCartWishlist();
 
   const bottomNav = [
     {
@@ -40,7 +40,7 @@ function BottomNav() {
       name: "Wishlist",
       quantity: state.wishlistArr.length,
       route: "/wishlist"
-    },
+    }
   ];
 
   return (
@@ -49,10 +49,13 @@ function BottomNav() {
         <ul className="ecommerce__list">
           {bottomNav.map((item) => {
             return (
-              <li onClick={() => {
-                setSelected(item.name)
-                navigate(`${item.route}`)
-              }} key={item.id}>
+              <li
+                onClick={() => {
+                  setSelected(item.name);
+                  navigate(`${item.route}`);
+                }}
+                key={item.id}
+              >
                 <div className="iconWithNum">
                   <img
                     className="ecomm__icon iconWithNum"
@@ -61,7 +64,7 @@ function BottomNav() {
                   />
                   <span
                     style={{
-                      display: item.quantity ? null : "none",
+                      display: item.quantity ? null : "none"
                     }}
                   >
                     {item.quantity}

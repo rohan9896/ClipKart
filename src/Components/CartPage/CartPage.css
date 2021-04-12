@@ -67,8 +67,8 @@
 }
 
 .CartCard__PlusMinusBtn > button {
-    border: none;
-    font-size: larger;
+  border: none;
+  font-size: larger;
 }
 
 .remove-btn {

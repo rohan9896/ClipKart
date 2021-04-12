@@ -1,6 +1,6 @@
 .ProductsPage__List {
-    margin: 1.5rem;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+  margin: 1.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }

@@ -8,7 +8,7 @@ const footerDetails = [
     img:
       "https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/a1e961baa4dda6a20bb50123b9aa102aea3091ef/icons/ecomm/truck.svg",
     line1: "Free Delivery",
-    line2: "Delivery happens within 3-5 days",
+    line2: "Delivery happens within 3-5 days"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const footerDetails = [
     img:
       "https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/a1e961baa4dda6a20bb50123b9aa102aea3091ef/icons/ecomm/payment.svg",
     line1: "Payment Options",
-    line2: "Cash on Delivery",
+    line2: "Cash on Delivery"
   },
   {
     id: 3,
@@ -24,8 +24,8 @@ const footerDetails = [
     img:
       "https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/a1e961baa4dda6a20bb50123b9aa102aea3091ef/icons/ecomm/customer_support.svg",
     line1: "Customer Support",
-    line2: "rohang9896@gmail.com",
-  },
+    line2: "rohang9896@gmail.com"
+  }
 ];
 
 function Footer() {

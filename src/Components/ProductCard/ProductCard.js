@@ -13,7 +13,7 @@ function ProductCard({
   img,
   category,
   rating,
-  wishlisted,
+  wishlisted
 }) {
   const { dispatch, containsInCart } = useCartWishlist();
 
@@ -48,10 +48,11 @@ function ProductCard({
           style={{ backgroundColor: inStock ? null : "gray" }}
           className="primary-button darkBlue"
         >
-          {/* {inStock ? "Add To Cart" : "Out Of Stock"} */}
-          {
-            inStock ? containsInCart(id) ? "Already in Cart" : "Add to Cart" : "Out Of Stock"
-          }
+          {inStock
+            ? containsInCart(id)
+              ? "Already in Cart"
+              : "Add to Cart"
+            : "Out Of Stock"}
         </button>
       </div>
       <span style={{ display: isNew ? null : "none" }} className="badge">
@@ -63,7 +64,7 @@ function ProductCard({
           onClick={() =>
             dispatch({
               type: wishlisted ? "REMOVE_FROM_WISHLIST" : "ADD_TO_WISHLIST",
-              payload: id,
+              payload: id
             })
           }
           src={
@@ -79,8 +80,3 @@ function ProductCard({
 }
 
 export default ProductCard;
-
-/*
-https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/309d5241b424ce7b648a1ac780f7be3dad194b0d/icons/ecomm/white%20heart.svg
-https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/309d5241b424ce7b648a1ac780f7be3dad194b0d/icons/ecomm/heart.svg
-*/
