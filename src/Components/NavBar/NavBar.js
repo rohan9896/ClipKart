@@ -1,6 +1,6 @@
 import React from "react";
-import "./NavBar.css"
-import { useNavigate } from 'react-router-dom';
+import "./NavBar.css";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
   let navigate = useNavigate();
@@ -10,7 +10,7 @@ function NavBar() {
       <nav className="ecom__nav">
         <div onClick={() => navigate(`/`)} className="Nav3__logo">
           <img
-            class="ecomm__icon"
+            className="ecomm__icon"
             src="https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/e1217d3f5a4c18a40c95e1ced9a9be04bdb256d0/icons/ecomm/logo.svg"
             alt="white heart"
           />
