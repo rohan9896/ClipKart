@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "express": "^4.17.1",
     "faker": "^5.5.2",
     "history": "5.0.0",
     "react": "^17.0.2",
