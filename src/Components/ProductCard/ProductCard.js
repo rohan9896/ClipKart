@@ -70,7 +70,7 @@ function ProductCard({
           src={
             wishlisted
               ? "https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/309d5241b424ce7b648a1ac780f7be3dad194b0d/icons/ecomm/heart.svg"
-              : "https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/309d5241b424ce7b648a1ac780f7be3dad194b0d/icons/ecomm/white%20heart.svg"
+              : "https://github.com/rohan9896/Testing-for-CSS-component-library/blob/main/icons/ecomm/white-heart-emoji-clipart-lg.png?raw=true"
           }
           alt="heart"
         />
