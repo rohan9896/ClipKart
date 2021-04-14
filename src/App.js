@@ -8,6 +8,7 @@ import ProductsPage from "./Components/ProductsPage/ProductsPage";
 import CartPage from "./Components/CartPage/CartPage";
 import EmptyPage from "./Components/EmptyPage/EmptyPage";
 import { useCartWishlist } from "./context/cart-wishlist-context";
+import NoProductFoundPage from "./Components/NoProductFoundPage/NoProductFoundPage";
 
 function App() {
   const { state } = useCartWishlist();
@@ -29,7 +30,11 @@ function App() {
           element={
             <>
               <NavBar />
-              <ProductsPage />
+              {state.productsArr.length === 0 ? (
+                <NoProductFoundPage />
+              ) : (
+                <ProductsPage />
+              )}
               <BottomNav />
             </>
           }

@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://effortlessui.netlify.app/base.css");
+
+.NoProductFound__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  margin: 3rem;
+}
+
+.NoProductFound__container > img {
+  width: 216px;
+}
+
+.line1 {
+  font-size: larger;
+  font-weight: 900;
+}
+
+@media screen and (min-width: 768px) {
+  .NoProductFound__container > img {
+    width: 324px;
+  }
+}
