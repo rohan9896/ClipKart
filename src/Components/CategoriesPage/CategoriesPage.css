@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.Category__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.category-card {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #146eb4;
+  width: fit-content;
+  color: white;
+  border-radius: 1.2rem;
+  margin: 1.5rem;
+  cursor: pointer;
+}
+
+.category-card > span {
+  padding: 0.5rem;
+}

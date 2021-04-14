@@ -9,6 +9,7 @@ import CartPage from "./Components/CartPage/CartPage";
 import EmptyPage from "./Components/EmptyPage/EmptyPage";
 import { useCartWishlist } from "./context/cart-wishlist-context";
 import NoProductFoundPage from "./Components/NoProductFoundPage/NoProductFoundPage";
+import CategoriesPage from "./Components/CategoriesPage/CategoriesPage";
 
 function App() {
   const { state } = useCartWishlist();
@@ -44,7 +45,8 @@ function App() {
           element={
             <>
               <NavBar />
-              <h1>Categories will go here...</h1>
+              {/* <h1>Categories will go here...</h1> */}
+              <CategoriesPage />
               <BottomNav />
             </>
           }
