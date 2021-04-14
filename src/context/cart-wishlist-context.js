@@ -8,6 +8,7 @@ const cartArr = [];
 const wishlistArr = [];
 
 const actionTypes = {
+  SHOW_ALL_PRODUCTS: "SHOW_ALL_PRODUCTS",
   ADD_TO_CART: "ADD_TO_CART",
   REMOVE_FROM_CART: "REMOVE_FROM_CART",
   INCREASE_QUANTITY: "INCREASE_QUANTITY",
@@ -19,6 +20,11 @@ const actionTypes = {
 
 const cartWishlistReducerFunc = (state, action) => {
   switch (action.type) {
+    case actionTypes.SHOW_ALL_PRODUCTS:
+      return {
+        ...state,
+        productsArr: productsData
+      }
     case actionTypes.ADD_TO_CART:
       return {
         ...state,
