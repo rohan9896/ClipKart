@@ -17,7 +17,7 @@ function Search() {
           placeholder="Search For Products"
         />
         <button
-          disabled={inputVal === ''}
+          disabled={inputVal === ""}
           onClick={() => {
             dispatch({ type: "SEARCH_PRODUCTS", payload: inputVal });
           }}
@@ -30,16 +30,19 @@ function Search() {
           </h3>
         </button>
       </div>
-      <p
-        onClick={() => {
-          dispatch({ type: "SHOW_ALL_PRODUCTS" });
-          setInputVal("");
-        }}
+      <div
         style={{ display: inputVal ? null : "none" }}
         className="clearSearch"
       >
-        Clear Search
-      </p>
+        <p
+          onClick={() => {
+            dispatch({ type: "SHOW_ALL_PRODUCTS" });
+            setInputVal("");
+          }}
+        >
+          Clear Search
+        </p>
+      </div>
     </>
   );
 }
