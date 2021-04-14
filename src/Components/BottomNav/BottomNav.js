@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./BottomNav.css";
 import { NavLink } from "react-router-dom";
 import { useCartWishlist } from "../../context/cart-wishlist-context";

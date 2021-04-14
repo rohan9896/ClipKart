@@ -16,6 +16,7 @@ const actionTypes = {
   ADD_TO_WISHLIST: "ADD_TO_WISHLIST",
   REMOVE_FROM_WISHLIST: "REMOVE_FROM_WISHLIST",
   MOVE_TO_CART_FROM_WISHLIST: "MOVE_TO_CART_FROM_WISHLIST",
+  SEARCH_PRODUCTS: "SEARCH_PRODUCTS",
 };
 
 const cartWishlistReducerFunc = (state, action) => {
@@ -23,8 +24,8 @@ const cartWishlistReducerFunc = (state, action) => {
     case actionTypes.SHOW_ALL_PRODUCTS:
       return {
         ...state,
-        productsArr: productsData
-      }
+        productsArr: productsData,
+      };
     case actionTypes.ADD_TO_CART:
       return {
         ...state,
@@ -106,6 +107,14 @@ const cartWishlistReducerFunc = (state, action) => {
           product.id === action.payload
             ? { ...product, wishlisted: false }
             : product
+        ),
+      };
+    case actionTypes.SEARCH_PRODUCTS:
+      if (action.payload === "") return;
+      return {
+        ...state,
+        productsArr: state.productsArr.filter((product) =>
+          product.name.toLowerCase().includes(action.payload.toLowerCase())
         ),
       };
     default:

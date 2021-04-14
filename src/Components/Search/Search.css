@@ -1,4 +1,5 @@
 @import url("https://effortlessui.netlify.app/base.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 .search-btn {
   background-color: #ebecf0;
@@ -9,4 +10,20 @@
   display: flex;
   justify-content: center;
   margin: 1rem;
+}
+
+.clearSearch {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem 3rem;
+  font-size: larger;
+  color: red;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .clearSearch {
+    justify-content: center;
+  }
 }

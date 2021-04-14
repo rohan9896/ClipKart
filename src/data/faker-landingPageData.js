@@ -39,5 +39,3 @@ function generateLandingPageData() {
 }
 
 export const landingPageData = generateLandingPageData();
-
-console.log(landingPageData);

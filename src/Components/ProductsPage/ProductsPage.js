@@ -14,7 +14,7 @@ function ProductsPage() {
       <Search />
       <div className="ProductsPage__List">
         {state.productsArr.map((product) => {
-          return <ProductCard {...product} />;
+          return <ProductCard key={product.id} {...product} />;
         })}
       </div>
     </>
