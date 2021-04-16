@@ -157,7 +157,7 @@ export default function CartWishListContextProvider({ children }) {
     cartArr,
     wishlistArr,
     sortBy,
-    dataFilter
+    dataFilter,
   });
 
   // const containsInWishlist = (id) =>

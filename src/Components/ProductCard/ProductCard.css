@@ -15,6 +15,10 @@
   width: 100%;
 }
 
+.addToCart > button:hover {
+  background-color: rgb(9, 55, 73);
+}
+
 .productInfo {
   font-family: "Poppins", sans-serif;
 }
@@ -34,4 +38,8 @@
 
 .addToCart {
   justify-self: flex-end;
+}
+
+.ecomm__icon {
+  cursor: pointer;
 }

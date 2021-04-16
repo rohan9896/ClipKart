@@ -3,6 +3,7 @@ import "./CategoriesPage.css";
 import faker from "faker";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Heading from "../Heading/Heading";
+// import { useNavigate } from "react-router-dom";
 
 const categories = [
   {
@@ -58,25 +59,28 @@ const categories = [
 ];
 
 function CategoriesPage() {
+  // let navigate = useNavigate();
   return (
     <>
-    <Heading text="CATEGORIES" />
-      <div className="Category__list">
-        {categories.map((category) => {
-          return (
-            <div key={category.id} className="category-card">
-              <div>
-                <LazyLoadImage
-                  effect="black-and-white"
-                  style={{ width: "15rem", height: "17rem" }}
-                  src={category.img}
-                  alt="catrgory-card"
-                />
+      <div>
+        <Heading text="CATEGORIES" />
+        <div className="Category__list">
+          {categories.map((category) => {
+            return (
+              <div key={category.id} className="category-card">
+                <div>
+                  <LazyLoadImage
+                    effect="black-and-white"
+                    style={{ width: "15rem", height: "17rem" }}
+                    src={category.img}
+                    alt="catrgory-card"
+                  />
+                </div>
+                <span>{category.category}</span>
               </div>
-              <span>{category.category}</span>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </>
   );
