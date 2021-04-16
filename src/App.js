@@ -45,7 +45,6 @@ function App() {
           element={
             <>
               <NavBar />
-              {/* <h1>Categories will go here...</h1> */}
               <CategoriesPage />
               <BottomNav />
             </>
