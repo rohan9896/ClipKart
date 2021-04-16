@@ -11,7 +11,7 @@ function WishListPage() {
       <Heading text="WISHLIST" />
       <div className="Wishlist__List">
         {state.wishlistArr.map((product) => {
-          const productAlreadyInCart = containsInCart(product.id);
+          const productAlreadyInCart = containsInCart(product.id);   //returns boolean
           return (
             <div key={product.id} className="card2">
               <img alt="wishlistCard" src={product.img} />
