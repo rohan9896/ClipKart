@@ -12,6 +12,7 @@
   padding: 0.3rem;
   font-family: "Poppins", sans-serif;
   position: relative;
+  height: fit-content;
 }
 
 .card2 > img {
@@ -41,4 +42,5 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  min-height: 80vh;
 }

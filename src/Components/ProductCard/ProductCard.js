@@ -2,6 +2,7 @@ import React from "react";
 import "./ProductCard.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useCartWishlist } from "../../context/cart-wishlist-context";
+import { useNavigate } from "react-router-dom";
 
 function ProductCard({
   id,
@@ -16,6 +17,8 @@ function ProductCard({
   wishlisted
 }) {
   const { dispatch, containsInCart } = useCartWishlist();
+  let navigate = useNavigate();
+
 
   return (
     <div key={id} className="card">
@@ -43,14 +46,14 @@ function ProductCard({
       </div>
       <div className="addToCart">
         <button
-          onClick={() => dispatch({ type: "ADD_TO_CART", payload: id })}
+          onClick={() => containsInCart(id) ? navigate(`/cart`) : dispatch({ type: "ADD_TO_CART", payload: id })}
           disabled={!inStock}
           style={{ backgroundColor: inStock ? null : "gray" }}
           className="primary-button darkBlue"
         >
           {inStock
             ? containsInCart(id)
-              ? "Already in Cart"
+              ? "Go To Cart"
               : "Add to Cart"
             : "Out Of Stock"}
         </button>
