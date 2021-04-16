@@ -1,16 +1,16 @@
 import { createContext, useContext, useReducer } from "react";
 import { productsData } from "../data/faker-productsData";
+import { getSortedData, getFilteredData } from "./filters-functions";
 
 const CartWishListContext = createContext();
 
+//initial state values
 const productsArr = productsData;
 const cartArr = [];
 const wishlistArr = [];
 const sortBy = "";
-const dataFilter = {
-  includeOutOfStock: true,
-  newProductsOnly: false,
-}
+const excludeOutOfStock = false;
+const newProductsOnly = false;
 
 const actionTypes = {
   SHOW_ALL_PRODUCTS: "SHOW_ALL_PRODUCTS",
@@ -22,31 +22,10 @@ const actionTypes = {
   REMOVE_FROM_WISHLIST: "REMOVE_FROM_WISHLIST",
   MOVE_TO_CART_FROM_WISHLIST: "MOVE_TO_CART_FROM_WISHLIST",
   SEARCH_PRODUCTS: "SEARCH_PRODUCTS",
-  CLEAR_ALL_FILTERS: "CLEAR_ALL_FILTERS"
+  SORT: "SORT",
+  TOGGLE_IN_STOCK: "TOGGLE_IN_STOCK",
+  TOGGLE_NEW_PRODUCTS: "TOGGLE_NEW_PRODUCTS"
 };
-
-const getSortedData = (state, dataArr) => {
-  switch (state.sortBy) {
-    case "PRICE_HIGH_TO_LOW":
-      return [...dataArr].sort((product1, product2) => {
-        return (product2.price - product1.price);
-      })
-    case "PRICE_LOW_TO_HIGH":
-      return [...dataArr].sort((product1, product2) => {
-        return (product1.price - product2.price);
-      })
-    case "RATING_HIGH_TO_LOW":
-      return [...dataArr].sort((product1, product2) => {
-        return (product2.rating - product1.rating);
-      })
-    default:
-      return dataArr;
-  }
-}
-
-const getFilteredData = (state, dataArr) => {
-  let newDataArr = [...dataArr];
-}
 
 const cartWishlistReducerFunc = (state, action) => {
   switch (action.type) {
@@ -54,6 +33,9 @@ const cartWishlistReducerFunc = (state, action) => {
       return {
         ...state,
         productsArr: productsData,
+        sortBy: "",
+        excludeOutOfStock: false,
+        newProductsOnly: false,
       };
     case actionTypes.ADD_TO_CART:
       return {
@@ -146,6 +128,21 @@ const cartWishlistReducerFunc = (state, action) => {
           product.name.toLowerCase().includes(action.payload.toLowerCase())
         ),
       };
+    case actionTypes.SORT:
+      return {
+        ...state,
+        sortBy: action.payload
+      }
+    case actionTypes.TOGGLE_IN_STOCK:
+      return {
+        ...state,
+        excludeOutOfStock: !state.excludeOutOfStock
+      }
+    case actionTypes.TOGGLE_NEW_PRODUCTS:
+      return {
+        ...state,
+        newProductsOnly: !state.newProductsOnly
+      }
     default:
       return state;
   }
@@ -157,7 +154,8 @@ export default function CartWishListContextProvider({ children }) {
     cartArr,
     wishlistArr,
     sortBy,
-    dataFilter,
+    excludeOutOfStock,
+    newProductsOnly,
   });
 
   // const containsInWishlist = (id) =>
@@ -171,6 +169,8 @@ export default function CartWishListContextProvider({ children }) {
         state,
         dispatch, //state setter function
         containsInCart, //returns function which takes product id as argument
+        getSortedData,
+        getFilteredData,
       }}
     >
       {children}

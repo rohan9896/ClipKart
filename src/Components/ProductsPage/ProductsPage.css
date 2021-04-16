@@ -1,6 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.productsPage__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
 .ProductsPage__List {
   margin: 1.5rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+
+.sortAndFilter__container {
+  margin: 1rem;
+  font-family: "Poppins", sans-serif;
+  border-right: 2px solid rgb(192, 185, 185);
+  padding: 2rem 1rem;
+  height: fit-content;
+  width: fit-content;
+}
+
+@media screen and (max-width: 800px) {
+  .productsPage__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .DesktopList {
+    display: none;
+  }
+}
+
+.filters, .sortBy {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters > label, .sortBy > label {
+  margin: 0.7rem 0;
+}
+
+.MobileList {
+  display: none;
+}
+
+
+.SortAndFilter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #ebecf0;
+  font-family: "Poppins", sans-serif;
+}
+
+.sorticon__mobile,
+.filtericon__mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(218, 210, 210);
+  padding: 1rem;
+  position: relative;
+  margin: 0;
+}
+
+.sorticon__mobile > span,
+.filtericon__mobile > span {
+  cursor: pointer;
+}
+
+.sort_popout,
+.filter_popout {
+  position: absolute;
+  top: 110%;
+}
+
+.filters,
+.sortBy {
+  display: flex;
+  flex-direction: column;
+}
+
+.sortBy.mobile,
+.filters.mobile {
+  background-color: #ebecf0;
+  padding: 1rem;
+  width: fit-content;
+  padding: 0.2rem 4rem 0.2rem 1.5rem;
+  border: solid 1.5px #8c8d8f;
+  z-index: 999;
+}
+
+.clearAll {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.clearAll > p {
+  font-family: "Poppins", sans-serif;
+  font-size: larger;
+  color: white;
+  background-color: red;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 800px) {
+  .MobileList {
+    display: block;
+  }
 }
