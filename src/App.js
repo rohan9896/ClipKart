@@ -11,20 +11,7 @@ import { useCartWishlist } from "./context/cart-wishlist-context";
 import NoProductFoundPage from "./Components/NoProductFoundPage/NoProductFoundPage";
 import CategoriesPage from "./Components/CategoriesPage/CategoriesPage";
 import CategoryPageProducts from "./Components/CategoryPageProducts/CategoryPageProducts";
-
-const categories = [
-  encodeURIComponent("Men's fashion"),
-  encodeURIComponent("Women's fashion"),
-  encodeURIComponent("Accessories"),
-  encodeURIComponent("Bags and Bagpacks"),
-  encodeURIComponent("Gadgets"),
-  encodeURIComponent("Sports and Active Wear"),
-  encodeURIComponent("Home decor"),
-  encodeURIComponent("Boy's Footwear"),
-  encodeURIComponent("Girl's Footwear"),
-  encodeURIComponent("Kids"),
-  encodeURIComponent("Infants"),
-];
+import { categories } from "./categories-name-in-uri-format";
 
 function App() {
   const { state } = useCartWishlist();
@@ -65,19 +52,22 @@ function App() {
             </>
           }
         />
-        {
-          categories.map(category => {
-            return (
-              <Route path={`categories/${category}`} element={
+        {categories.map((category) => {
+          return (
+            <Route
+              path={`categories/${category}`}
+              element={
                 <>
                   <NavBar />
-                  <CategoryPageProducts categoryName={decodeURIComponent(category)} />
+                  <CategoryPageProducts
+                    categoryName={decodeURIComponent(category)}
+                  />
                   <BottomNav />
                 </>
-              } />
-            )
-          })
-        }
+              }
+            />
+          );
+        })}
         <Route
           path="/cart"
           element={

@@ -24,7 +24,7 @@ const actionTypes = {
   SEARCH_PRODUCTS: "SEARCH_PRODUCTS",
   SORT: "SORT",
   TOGGLE_IN_STOCK: "TOGGLE_IN_STOCK",
-  TOGGLE_NEW_PRODUCTS: "TOGGLE_NEW_PRODUCTS"
+  TOGGLE_NEW_PRODUCTS: "TOGGLE_NEW_PRODUCTS",
 };
 
 const cartWishlistReducerFunc = (state, action) => {
@@ -131,18 +131,18 @@ const cartWishlistReducerFunc = (state, action) => {
     case actionTypes.SORT:
       return {
         ...state,
-        sortBy: action.payload
-      }
+        sortBy: action.payload,
+      };
     case actionTypes.TOGGLE_IN_STOCK:
       return {
         ...state,
-        excludeOutOfStock: !state.excludeOutOfStock
-      }
+        excludeOutOfStock: !state.excludeOutOfStock,
+      };
     case actionTypes.TOGGLE_NEW_PRODUCTS:
       return {
         ...state,
-        newProductsOnly: !state.newProductsOnly
-      }
+        newProductsOnly: !state.newProductsOnly,
+      };
     default:
       return state;
   }
@@ -157,9 +157,6 @@ export default function CartWishListContextProvider({ children }) {
     excludeOutOfStock,
     newProductsOnly,
   });
-
-  // const containsInWishlist = (id) =>
-  //   state.wishlistArr.some((item) => item.id === id);
 
   const containsInCart = (id) => state.cartArr.some((item) => item.id === id);
 
