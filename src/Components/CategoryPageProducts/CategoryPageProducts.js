@@ -3,7 +3,6 @@ import { useCartWishlist } from "../../context/cart-wishlist-context";
 import Heading from "../Heading/Heading";
 import ProductCard from "../ProductCard/ProductCard";
 import "../ProductsPage/ProductsPage.css";
-import { Routes, Route } from "react-router-dom";
 
 function CategoryPageProducts({ categoryName }) {
   const { state } = useCartWishlist();
