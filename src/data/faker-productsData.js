@@ -28,7 +28,7 @@ function generateProductsData() {
           "Boy's Footwear",
           "Girl's Footwear",
           "Kids",
-          "Infants"
+          "Infants",
         ]),
         rating: faker.random.arrayElement([
           0.5,
@@ -39,10 +39,10 @@ function generateProductsData() {
           3,
           3.5,
           4,
-          4.5
+          4.5,
         ]),
-        popularity: faker.datatype.number(100)
-      }
+        popularity: faker.datatype.number(100),
+      },
     ];
   }
   return productsData;

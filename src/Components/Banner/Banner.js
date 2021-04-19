@@ -8,22 +8,22 @@ const bannersArr = [
     img:
       "https://images.unsplash.com/photo-1521080755838-d2311117f767?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1129&q=80",
     heading1: "ClipKart's Biggest Trillion Day's",
-    heading2: "Sale ends on 31 April"
+    heading2: "Sale ends on 31 April",
   },
   {
     name: "",
     img:
       "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ",
     heading1: "Maha Bachat Days",
-    heading2: "Buy at 90% OFF"
+    heading2: "Buy at 90% OFF",
   },
   {
     name: "",
     img:
       "https://image.freepik.com/free-vector/abstract-dotted-banner-background_1035-18160.jpg",
     heading1: "Buy 2 Get 2 FREE ",
-    heading2: "ONLY FOR TODAY!!"
-  }
+    heading2: "ONLY FOR TODAY!!",
+  },
 ];
 
 function Banner() {
@@ -52,7 +52,7 @@ function Banner() {
     <>
       <div
         style={{
-          backgroundImage: `url(${banner.img})`
+          backgroundImage: `url(${banner.img})`,
         }}
         className="banner__container"
       >

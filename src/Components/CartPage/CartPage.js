@@ -32,7 +32,7 @@ function CartPage() {
                             onClick={() =>
                               dispatch({
                                 type: "INCREASE_QUANTITY",
-                                payload: id
+                                payload: id,
                               })
                             }
                           >
@@ -46,7 +46,7 @@ function CartPage() {
                                   quantity === 1
                                     ? "REMOVE_FROM_CART"
                                     : "DECREASE_QUANTITY",
-                                payload: id
+                                payload: id,
                               })
                             }
                           >

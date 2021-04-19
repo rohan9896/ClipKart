@@ -8,7 +8,11 @@ export const getSortedData = (productList, sortBy) => {
   return productList;
 };
 
-export const getFilteredData = (productList, excludeOutOfStock, newProductsOnly) => {
+export const getFilteredData = (
+  productList,
+  excludeOutOfStock,
+  newProductsOnly
+) => {
   return productList
     .filter((product) => (excludeOutOfStock ? product.inStock : true))
     .filter((product) => (newProductsOnly ? product.isNew : true));

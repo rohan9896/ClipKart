@@ -49,11 +49,19 @@ function ProductsPage() {
           <h2>Filters</h2>
           <div className="filters">
             <label>
-              <input checked={state.excludeOutOfStock} onChange={() => dispatch({type: "TOGGLE_IN_STOCK"})} type="checkbox" />
+              <input
+                checked={state.excludeOutOfStock}
+                onChange={() => dispatch({ type: "TOGGLE_IN_STOCK" })}
+                type="checkbox"
+              />
               Exclude Out Of Stock
             </label>
             <label>
-              <input checked={state.newProductsOnly} onChange={() => dispatch({type: "TOGGLE_NEW_PRODUCTS"})} type="checkbox" />
+              <input
+                checked={state.newProductsOnly}
+                onChange={() => dispatch({ type: "TOGGLE_NEW_PRODUCTS" })}
+                type="checkbox"
+              />
               Show New Products Only
             </label>
           </div>
@@ -125,11 +133,19 @@ function ProductsPage() {
             >
               <div className="filters mobile">
                 <label>
-                  <input checked={state.excludeOutOfStock} onChange={() => dispatch({type: "TOGGLE_IN_STOCK"})} type="checkbox" />
+                  <input
+                    checked={state.excludeOutOfStock}
+                    onChange={() => dispatch({ type: "TOGGLE_IN_STOCK" })}
+                    type="checkbox"
+                  />
                   Exclude Out Of Stock
                 </label>
                 <label>
-                  <input checked={state.newProductsOnly} onChange={() => dispatch({type: "TOGGLE_NEW_PRODUCTS"})} type="checkbox" />
+                  <input
+                    checked={state.newProductsOnly}
+                    onChange={() => dispatch({ type: "TOGGLE_NEW_PRODUCTS" })}
+                    type="checkbox"
+                  />
                   Show New Products Only
                 </label>
               </div>

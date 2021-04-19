@@ -14,11 +14,10 @@ function ProductCard({
   img,
   category,
   rating,
-  wishlisted
+  wishlisted,
 }) {
   const { dispatch, containsInCart } = useCartWishlist();
   let navigate = useNavigate();
-
 
   return (
     <div key={id} className="card">
@@ -46,7 +45,11 @@ function ProductCard({
       </div>
       <div className="addToCart">
         <button
-          onClick={() => containsInCart(id) ? navigate(`/cart`) : dispatch({ type: "ADD_TO_CART", payload: id })}
+          onClick={() =>
+            containsInCart(id)
+              ? navigate(`/cart`)
+              : dispatch({ type: "ADD_TO_CART", payload: id })
+          }
           disabled={!inStock}
           style={{ backgroundColor: inStock ? null : "gray" }}
           className="primary-button darkBlue"
@@ -67,7 +70,7 @@ function ProductCard({
           onClick={() =>
             dispatch({
               type: wishlisted ? "REMOVE_FROM_WISHLIST" : "ADD_TO_WISHLIST",
-              payload: id
+              payload: id,
             })
           }
           src={

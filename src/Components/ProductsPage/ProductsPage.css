@@ -31,19 +31,20 @@
   }
 }
 
-.filters, .sortBy {
+.filters,
+.sortBy {
   display: flex;
   flex-direction: column;
 }
 
-.filters > label, .sortBy > label {
+.filters > label,
+.sortBy > label {
   margin: 0.7rem 0;
 }
 
 .MobileList {
   display: none;
 }
-
 
 .SortAndFilter {
   display: grid;
@@ -105,7 +106,6 @@
   border-radius: 0.5rem;
   cursor: pointer;
 }
-
 
 @media screen and (max-width: 800px) {
   .MobileList {

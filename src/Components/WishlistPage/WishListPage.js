@@ -11,7 +11,7 @@ function WishListPage() {
       <Heading text="WISHLIST" />
       <div className="Wishlist__List">
         {state.wishlistArr.map((product) => {
-          const productAlreadyInCart = containsInCart(product.id);   //returns boolean
+          const productAlreadyInCart = containsInCart(product.id); //returns boolean
           return (
             <div key={product.id} className="card2">
               <img alt="wishlistCard" src={product.img} />
@@ -21,7 +21,7 @@ function WishListPage() {
               <button
                 style={{
                   backgroundColor:
-                    productAlreadyInCart || !product.inStock ? "gray" : null
+                    productAlreadyInCart || !product.inStock ? "gray" : null,
                 }}
                 disabled={productAlreadyInCart || !product.inStock}
                 onClick={() =>
@@ -29,7 +29,7 @@ function WishListPage() {
                     type: productAlreadyInCart
                       ? null
                       : "MOVE_TO_CART_FROM_WISHLIST",
-                    payload: product.id
+                    payload: product.id,
                   })
                 }
                 className="primary-button darkBlue"
@@ -44,7 +44,7 @@ function WishListPage() {
                 onClick={() =>
                   dispatch({
                     type: "REMOVE_FROM_WISHLIST",
-                    payload: product.id
+                    payload: product.id,
                   })
                 }
                 className="cross"

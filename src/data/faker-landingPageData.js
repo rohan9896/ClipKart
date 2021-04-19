@@ -12,8 +12,8 @@ function generateLandingPageData() {
         id: faker.datatype.uuid(),
         name: faker.commerce.productName(),
         price: faker.commerce.price(),
-        img: faker.image.image()
-      }
+        img: faker.image.image(),
+      },
     ];
     trendingBrands = [
       ...trendingBrands,
@@ -30,9 +30,9 @@ function generateLandingPageData() {
           60,
           70,
           80,
-          90
-        ])
-      }
+          90,
+        ]),
+      },
     ];
   }
   return { biggestDeals, trendingBrands };
