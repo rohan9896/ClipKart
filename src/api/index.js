@@ -1,11 +1,12 @@
-const express = require('express');
+import axios from "axios";
 
-const app = express();
+const url = "https://e-comm-backend.rohangupta7.repl.co/products";
 
-app.get('/', (req, res) => {
-  res.send('Hello Express app!')
-});
+const loadProductsData = async () => {
+  const resp = await axios.get(url);
+  if(resp.data.success) {
+    return resp.data.productsData;
+  }
+}
 
-app.listen(3000, () => {
-  console.log('server started');
-});
+export const productsData = loadProductsData();
