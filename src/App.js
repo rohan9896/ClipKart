@@ -11,9 +11,10 @@ import NoProductFoundPage from "./Components/NoProductFoundPage/NoProductFoundPa
 import CategoriesPage from "./Components/CategoriesPage/CategoriesPage";
 import CategoryPageProducts from "./Components/CategoryPageProducts/CategoryPageProducts";
 import { categories } from "./categories-name-in-uri-format";
+import LoadingComponent from "./Components/LoadingComponent/LoadingComponent";
 
 function App() {
-  const { state } = useCartWishlist();
+  const { state, isProductsReceived } = useCartWishlist();
 
   return (
     <div className="App">
@@ -32,11 +33,9 @@ function App() {
           element={
             <>
               <NavBar />
-              {state.productsArr.length === 0 ? (
-                <NoProductFoundPage />
-              ) : (
-                <ProductsPage />
-              )}
+              {
+                isProductsReceived ? <ProductsPage /> : <LoadingComponent />
+              }
               <BottomNav />
             </>
           }
