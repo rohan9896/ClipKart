@@ -11,26 +11,3 @@
   justify-content: center;
   margin: 1rem;
 }
-
-.clearSearch {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0.5rem 3rem;
-  font-size: larger;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-}
-
-.clearSearch > p {
-  color: white;
-  background-color: red;
-  padding: 0.5rem;
-  border-radius: 0.4rem;
-  margin: 0;
-}
-
-@media screen and (max-width: 900px) {
-  .clearSearch {
-    justify-content: center;
-  }
-}

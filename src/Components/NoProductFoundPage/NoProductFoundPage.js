@@ -1,9 +1,11 @@
 import React from "react";
 import { useCartWishlist } from "../../context/cart-wishlist-context";
 import "./NoProductFoundPage.css";
+import { useNavigate } from "react-router-dom";
 
 function NoProductFoundPage() {
   const { dispatch } = useCartWishlist();
+  let navigate = useNavigate();
 
   return (
     <>
@@ -15,7 +17,10 @@ function NoProductFoundPage() {
         <p className="line1">No Product Found</p>
         <p>Please check the spelling or try searching for something else..</p>
         <button
-          onClick={() => dispatch({ type: "SHOW_ALL_PRODUCTS" })}
+          onClick={() => {
+            dispatch({ type: "SHOW_ALL_PRODUCTS" })
+            navigate("/products")
+          }}
           className="primary-button darkBlue"
         >
           Back To Shopping

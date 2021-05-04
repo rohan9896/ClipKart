@@ -32,6 +32,7 @@ export default function CartWishListContextProvider({ children }) {
   const sortBy = "";
   const excludeOutOfStock = false;
   const newProductsOnly = false;
+  const searchedProducts = [];
 
   //reducer func
   const cartWishlistReducerFunc = (state, action) => {
@@ -136,7 +137,7 @@ export default function CartWishListContextProvider({ children }) {
         if (action.payload === "") return;
         return {
           ...state,
-          productsArr: state.productsArr.filter((product) =>
+          searchedProducts: state.productsArr.filter((product) =>
             product.name.toLowerCase().includes(action.payload.toLowerCase())
           ),
         };
@@ -167,6 +168,7 @@ export default function CartWishListContextProvider({ children }) {
     sortBy,
     excludeOutOfStock,
     newProductsOnly,
+    searchedProducts
   });
 
   const containsInCart = (id) => state.cartArr.some((item) => item.id === id);

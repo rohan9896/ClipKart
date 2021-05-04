@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { useCartWishlist } from "../../context/cart-wishlist-context";
 import "./Search.css";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Search() {
-  const [inputVal, setInputVal] = useState("");
+
+  const searchQuery = new URLSearchParams(useLocation().search);
+
+  const [inputVal, setInputVal] = useState(searchQuery.get('q'));
   const { dispatch } = useCartWishlist();
+  let navigate = useNavigate();
 
   return (
     <>
@@ -20,6 +25,7 @@ function Search() {
           disabled={inputVal === ""}
           onClick={() => {
             dispatch({ type: "SEARCH_PRODUCTS", payload: inputVal });
+            navigate(`/products/search?q=${inputVal}`)
           }}
           className="search-btn"
         >
@@ -29,19 +35,6 @@ function Search() {
             </span>
           </h3>
         </button>
-      </div>
-      <div
-        style={{ display: inputVal ? null : "none" }}
-        className="clearSearch"
-      >
-        <p
-          onClick={() => {
-            dispatch({ type: "SHOW_ALL_PRODUCTS" });
-            setInputVal("");
-          }}
-        >
-          Clear Search
-        </p>
       </div>
     </>
   );
