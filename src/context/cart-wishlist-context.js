@@ -94,6 +94,11 @@ export default function CartWishListContextProvider({ children }) {
           ),
         };
       case actionTypes.ADD_TO_WISHLIST:
+        if (
+          state.wishlistArr.some((product) => product.id === action.payload)
+        ) {
+          return state;
+        }
         return {
           ...state,
           wishlistArr: state.wishlistArr.concat(
