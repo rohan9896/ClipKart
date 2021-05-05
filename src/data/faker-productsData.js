@@ -15,7 +15,7 @@ function generateProductsData() {
         inStock: faker.datatype.boolean(),
         quantity: 1,
         wishlisted: false,
-        isNew: faker.datatype.boolean(),
+        newProd: faker.datatype.boolean(),
         img: faker.image.image(),
         category: faker.random.arrayElement([
           "Men's fashion",
