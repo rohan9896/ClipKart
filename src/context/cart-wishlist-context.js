@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import { getSortedData, getFilteredData } from "./filters-functions";
 import { actionTypes } from "./action-types";
 import axios from "axios";
@@ -6,7 +12,6 @@ import axios from "axios";
 const CartWishListContext = createContext();
 
 export default function CartWishListContextProvider({ children }) {
-
   const [apiData, setApiData] = useState([]);
   const [isProductsReceived, setIsProductsReceived] = useState(false);
 
@@ -19,7 +24,7 @@ export default function CartWishListContextProvider({ children }) {
       if (resp.data.success) {
         const productsData = resp.data.products;
         dispatch({ type: "SET_PRODUCTS_DATA", payload: productsData }); //for setting the state of products
-        setApiData(productsData);  //for storing the original products data recived from serevr
+        setApiData(productsData); //for storing the original products data recived from serevr
         setIsProductsReceived(true);
       }
     })();
@@ -168,10 +173,12 @@ export default function CartWishListContextProvider({ children }) {
     sortBy,
     excludeOutOfStock,
     newProductsOnly,
-    searchedProducts
+    searchedProducts,
   });
 
   const containsInCart = (id) => state.cartArr.some((item) => item.id === id);
+  const containsInSearchedProducts = (id) =>
+    state.searchedProducts.some((item) => item.id === id);
 
   return (
     <CartWishListContext.Provider
@@ -179,9 +186,10 @@ export default function CartWishListContextProvider({ children }) {
         state,
         dispatch, //state setter function
         containsInCart, //returns function which takes product id as argument
+        containsInSearchedProducts, //returns function which takes product id as argument
         getSortedData,
         getFilteredData,
-        isProductsReceived
+        isProductsReceived,
       }}
     >
       {children}
