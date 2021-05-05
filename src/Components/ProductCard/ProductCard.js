@@ -10,7 +10,7 @@ function ProductCard({
   description,
   price,
   inStock,
-  isNew,
+  newProd,
   img,
   category,
   rating,
@@ -61,7 +61,7 @@ function ProductCard({
             : "Out Of Stock"}
         </button>
       </div>
-      <span style={{ display: isNew ? null : "none" }} className="badge">
+      <span style={{ display: newProd ? null : "none" }} className="badge">
         New!
       </span>
       <span className="heart">

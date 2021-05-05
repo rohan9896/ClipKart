@@ -15,5 +15,5 @@ export const getFilteredData = (
 ) => {
   return productList
     .filter((product) => (excludeOutOfStock ? product.inStock : true))
-    .filter((product) => (newProductsOnly ? product.isNew : true));
+    .filter((product) => (newProductsOnly ? product.newProd : true));
 };
