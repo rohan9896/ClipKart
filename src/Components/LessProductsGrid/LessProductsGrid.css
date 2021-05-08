@@ -20,11 +20,6 @@
   cursor: pointer;
 }
 
-.card2:nth-child(2n) {
-  background-color: rgb(156, 156, 156);
-  color: white;
-}
-
 .card2__brand {
   margin: 0.5rem 0;
   font-weight: 800;
