@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       <Banner />
