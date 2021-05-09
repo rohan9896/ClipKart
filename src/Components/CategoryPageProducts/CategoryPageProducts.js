@@ -5,12 +5,12 @@ import ProductCard from "../ProductCard/ProductCard";
 import "../ProductsPage/ProductsPage.css";
 
 function CategoryPageProducts({ categoryName }) {
-  const { state } = useCartWishlist();
+  const { state: {productsArr} } = useCartWishlist();
   return (
     <>
       <Heading text={categoryName} />
       <div className="ProductsPage__List">
-        {state.productsArr
+        {productsArr
           .filter((product) => product.category === categoryName)
           .map((product) => {
             return <ProductCard key={product.id} {...product} />;
