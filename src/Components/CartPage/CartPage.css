@@ -3,7 +3,7 @@
 .CartPage__container {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  margin: 1rem 0;
+  margin: 1rem 2.5rem;
   min-height: 80vh;
 }
 
@@ -31,7 +31,7 @@
   border: solid 1px rgb(219, 213, 213);
   display: flex;
   justify-content: space-between;
-  width: 370px;
+  width: 550px;
   max-width: 100%;
   margin: 1rem 0;
 }
@@ -39,15 +39,6 @@
 .CartCard__ItemLeft {
   display: flex;
   margin: 1rem;
-}
-
-@media screen and (max-width: 500px) {
-  .CartCard__container {
-    width: 330px;
-  }
-  .CartCard__ItemLeft {
-    margin: 0.5rem;
-  }
 }
 
 .CartCard__Middle {
@@ -78,7 +69,7 @@
 }
 
 .CartCard__ItemLeft > img {
-  width: 8rem;
+  width: 14rem;
   height: inherit;
 }
 
@@ -100,4 +91,20 @@
   background-color: rgb(242, 242, 243);
   padding: 1rem;
   border-radius: 0.3rem;
+}
+
+@media screen and (max-width: 560px) {
+  .CartPage__container {
+    margin: 1rem 0;
+  }
+  .CartCard__container {
+    width: 340px;
+  }
+  .CartCard__ItemLeft {
+    margin: 0.5rem;
+  }
+  .CartCard__ItemLeft > img {
+    width: 8rem;
+    height: inherit;
+  }
 }
