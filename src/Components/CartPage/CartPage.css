@@ -32,7 +32,8 @@
   border: solid 1px rgb(219, 213, 213);
   display: flex;
   justify-content: space-between;
-  max-width: 370px;
+  width: 370px;
+  max-width: 100%;
   margin: 1rem 0;
 }
 
@@ -43,7 +44,7 @@
 
 @media screen and (max-width: 500px) {
   .CartCard__container {
-    width: 360px;
+    width: 330px;
   }
   .CartCard__ItemLeft {
     margin: 0.5rem;

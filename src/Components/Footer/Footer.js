@@ -34,18 +34,16 @@ function Footer() {
       <footer>
         <div className="Footer__container">
           <div className="Footer__storeFeatures">
-            {footerDetails.map((detailObj) => {
-              return (
-                <div
-                  className="Footer__storeFeatures__singleFeature"
-                  key={detailObj.id}
-                >
-                  <img src={detailObj.img} alt={detailObj.name} />
-                  <span className="line1">{detailObj.line1}</span>
-                  <span className="line2">{detailObj.line2}</span>
-                </div>
-              );
-            })}
+            {footerDetails.map((detailObj) => (
+              <div
+                className="Footer__storeFeatures__singleFeature"
+                key={detailObj.id}
+              >
+                <img src={detailObj.img} alt={detailObj.name} />
+                <span className="line1">{detailObj.line1}</span>
+                <span className="line2">{detailObj.line2}</span>
+              </div>
+            ))}
           </div>
           <div className="Footer__footerLinks">
             <p>Privacy Policy</p>
