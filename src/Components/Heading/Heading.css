@@ -2,8 +2,16 @@
 
 .Heading__container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   font-family: "Josefin Sans", sans-serif;
   font-size: large;
   margin: 1rem;
 }
+
+@media screen and (min-width: 768px) {
+  .Heading__container {
+    justify-content: flex-start;
+  }
+}
+
+

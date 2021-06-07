@@ -7,7 +7,7 @@ function Search() {
 
   const searchQuery = new URLSearchParams(useLocation().search);
 
-  const [inputVal, setInputVal] = useState(searchQuery.get('q'));
+  const [inputVal, setInputVal] = useState(searchQuery.get('q') || '');
   const { dispatch } = useCartWishlist();
   let navigate = useNavigate();
 

@@ -45,8 +45,6 @@ function SignUpCard() {
     //submit logic
   };
 
-  console.log(anyFieldEmpty());
-
   return (
     <div className="LoginAndSignupCard">
       <img

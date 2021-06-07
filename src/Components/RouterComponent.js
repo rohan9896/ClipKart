@@ -55,6 +55,7 @@ function RouterComponent() {
         {categories.map((category) => {
           return (
             <Route
+              key={categories.indexOf(category)}
               path={`categories/${category}`}
               element={
                 <>
