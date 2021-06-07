@@ -75,7 +75,7 @@ function ProductsPage() {
       </div>
       <div className="MobileList">
         <div className="SortAndFilter">
-          <p className="sorticon__mobile">
+          <div className="sorticon__mobile">
             Sort
             <span
               onClick={() => setSortPopoutClicked(!sortPopoutClicked)}
@@ -117,7 +117,7 @@ function ProductsPage() {
                 </label>
               </div>
             </div>
-          </p>
+          </div>
           <p className="filtericon__mobile">
             Filter
             <span

@@ -23,7 +23,11 @@ export default function CartWishListContextProvider({ children }) {
 
       if (resp.data.success) {
         const productsData = resp.data.products;
-        dispatch({ type: "SET_PRODUCTS_DATA", payload: productsData }); //for setting the state of products
+        const newProductsData = productsData.map(product => {
+          return {...product, id: product._id, _id: undefined}
+        })
+        console.log(newProductsData)
+        dispatch({ type: "SET_PRODUCTS_DATA", payload: newProductsData }); //for setting the state of products
         setApiData(productsData); //for storing the original products data recived from serevr
         setIsProductsReceived(true);
       }
