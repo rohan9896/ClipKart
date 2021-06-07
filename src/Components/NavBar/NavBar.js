@@ -17,28 +17,7 @@ function NavBar() {
           <span>Clipkart</span>
         </div>
         <div className="Nav3__icons">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            className="socialIcon"
-            href="https://github.com/rohan9896/"
-          >
-            <img
-              src="https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/e6cb96c466ed6305cdf465e6f86c6bde0150fd7e/icons/social%20icon/github.svg"
-              alt="github"
-            />
-          </a>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            className="socialIcon"
-            href="https://rohangupta-75149.medium.com/"
-          >
-            <img
-              src="https://github.com/rohan9896/Testing-for-CSS-component-library/blob/main/icons/social%20icon/medium.png?raw=true"
-              alt="medium"
-            />
-          </a>
+          <button className="ecom__nav__login">Log In</button>
         </div>
       </nav>
     </>

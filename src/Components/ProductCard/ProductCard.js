@@ -51,7 +51,7 @@ function ProductCard({
               : dispatch({ type: "ADD_TO_CART", payload: id })
           }
           disabled={!inStock}
-          style={{ backgroundColor: inStock ? null : "gray" }}
+          style={{ backgroundColor: inStock ? null : "gray", cursor: inStock ? "pointer" : "not-allowed" }}
           className="primary-button darkBlue"
         >
           {inStock

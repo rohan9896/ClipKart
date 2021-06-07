@@ -25,3 +25,19 @@
 .Nav3__icons > a {
   margin: 0rem 1rem;
 }
+
+.ecom__nav__login {
+  padding: 0.5rem 0.8rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border-radius: 0.5rem;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.ecom__nav__login:hover {
+  color: black;
+  background-color: white;
+}
