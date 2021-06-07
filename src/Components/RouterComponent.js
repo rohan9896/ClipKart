@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import NavBar from "./NavBar/NavBar"
+import NavBar from "./NavBar/NavBar";
 import LandingPage from "./LandingPage/LandingPage";
 import BottomNav from "./BottomNav/BottomNav";
 import WishListPage from "./WishlistPage/WishListPage";
@@ -14,6 +14,8 @@ import CategoryPageProducts from "./CategoryPageProducts/CategoryPageProducts";
 import { categories } from "../categories-name-in-uri-format";
 import LoadingComponent from "./LoadingComponent/LoadingComponent";
 import SearchPage from "./SearchPage/SearchPage";
+import LoginPage from "./LoginAndSignUpPages/LoginPage";
+import SignUpPage from "./LoginAndSignUpPages/SignUpPage";
 
 function RouterComponent() {
   const { state, isProductsReceived } = useCartWishlist();
@@ -100,12 +102,29 @@ function RouterComponent() {
             </>
           }
         />
-        <Route path="/products/search" element={
+        <Route
+          path="/products/search"
+          element={
             <>
-                {
-                    state.searchedProducts.length === 0 ? <NoProductFoundPage /> : <SearchPage />
-                }
+              {state.searchedProducts.length === 0 ? (
+                <NoProductFoundPage />
+              ) : (
+                <SearchPage />
+              )}
             </>
+          }
+        />
+        <Route path="/login" element={
+          <>
+            <NavBar />
+            <LoginPage />
+          </>
+        } />
+        <Route path="/signup" element={
+          <>
+            <NavBar />
+            <SignUpPage />
+          </>
         } />
         <Route
           path="*"
@@ -123,6 +142,3 @@ function RouterComponent() {
 }
 
 export default RouterComponent;
-
-
-// <SearchPage />

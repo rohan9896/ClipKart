@@ -17,7 +17,7 @@ function NavBar() {
           <span>Clipkart</span>
         </div>
         <div className="Nav3__icons">
-          <button className="ecom__nav__login">Log In</button>
+          <button onClick={() => navigate(`/login`)} className="ecom__nav__login">Log In</button>
         </div>
       </nav>
     </>

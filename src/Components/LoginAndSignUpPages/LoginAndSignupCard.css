@@ -1,4 +1,4 @@
-.LoginCard {
+.LoginAndSignupCard {
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 25%);
 }
 
-.forgot_passoword {
+.signupAndLoginNavigator {
   cursor: pointer;
 }
 
@@ -18,8 +18,12 @@
   background-color: rgb(248, 241, 241);
 }
 
+.error {
+  color: red;
+}
+
 @media screen and (min-width: 768px) {
-  .LoginCard {
+  .LoginAndSignupCard {
     width: 30rem;
   }
 }
