@@ -16,6 +16,7 @@ import LoadingComponent from "./LoadingComponent/LoadingComponent";
 import SearchPage from "./SearchPage/SearchPage";
 import LoginPage from "./LoginAndSignUpPages/LoginPage";
 import SignUpPage from "./LoginAndSignUpPages/SignUpPage";
+import AddressForm from "./ProfileComponents/AddressForm";
 
 function RouterComponent() {
   const { state, isProductsReceived } = useCartWishlist();
@@ -126,6 +127,9 @@ function RouterComponent() {
             <NavBar />
             <SignUpPage />
           </>
+        } />
+        <Route path="/test" element={
+          <AddressForm />
         } />
         <Route
           path="*"

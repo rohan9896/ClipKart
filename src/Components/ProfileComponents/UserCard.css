@@ -1,0 +1,26 @@
+.UserCard {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  border: solid 2px rgb(238, 234, 234);
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.UserCard:hover {
+  box-shadow: 20px 20px 60px #cccecf;
+}
+
+.UserCard__UserAvatar {
+  height: 10rem;
+  width: 10rem;
+}
+
+.UserCard > span {
+  font-size: large;
+  font-weight: bold;
+}
