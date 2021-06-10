@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductsPage.css";
 import Heading from "../Heading/Heading";
 import ProductCard from "../ProductCard/ProductCard";
@@ -13,6 +13,14 @@ function ProductsPage() {
     state.excludeOutOfStock,
     state.newProductsOnly
   );
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 100,
+      left: 100,
+      behavior: 'smooth'
+    });
+  }, [])
 
   const [sortPopoutClicked, setSortPopoutClicked] = useState(false);
   const [filterPopoutClicked, setFilterPopoutClicked] = useState(false);

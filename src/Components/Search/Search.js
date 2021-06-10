@@ -28,6 +28,7 @@ function Search() {
             navigate(`/products/search?q=${inputVal}`)
           }}
           className="search-btn"
+          style={{cursor: inputVal ? "pointer" : "not-allowed"}}
         >
           <h3>
             <span role="img" aria-label="search">
