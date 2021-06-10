@@ -79,7 +79,7 @@ function SignUpCard() {
         onChange={handleConfirmPassword}
         type="password"
         className="primaryInput focus"
-        placeholder="Password"
+        placeholder="Confirm Password"
       />
       {errorMsg && <p className="error">{errorMsg}</p>}
       <small
