@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import NavBar from "./NavBar/NavBar"
+import NavBar from "./NavBar/NavBar";
 import LandingPage from "./LandingPage/LandingPage";
 import BottomNav from "./BottomNav/BottomNav";
 import WishListPage from "./WishlistPage/WishListPage";
@@ -50,9 +50,10 @@ function RouterComponent() {
             </>
           }
         />
-        {categories.map((category) => {
+        {categories.map((category, idx) => {
           return (
             <Route
+              key={idx}
               path={`categories/${category}`}
               element={
                 <>
@@ -100,13 +101,18 @@ function RouterComponent() {
             </>
           }
         />
-        <Route path="/products/search" element={
+        <Route
+          path="/products/search"
+          element={
             <>
-                {
-                    state.searchedProducts.length === 0 ? <NoProductFoundPage /> : <SearchPage />
-                }
+              {state.searchedProducts.length === 0 ? (
+                <NoProductFoundPage />
+              ) : (
+                <SearchPage />
+              )}
             </>
-        } />
+          }
+        />
         <Route
           path="*"
           element={
@@ -123,6 +129,3 @@ function RouterComponent() {
 }
 
 export default RouterComponent;
-
-
-// <SearchPage />

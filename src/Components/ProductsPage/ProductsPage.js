@@ -118,7 +118,7 @@ function ProductsPage() {
               </div>
             </div>
           </div>
-          <p className="filtericon__mobile">
+          <div className="filtericon__mobile">
             Filter
             <span
               onClick={() => setFilterPopoutClicked(!filterPopoutClicked)}
@@ -150,7 +150,7 @@ function ProductsPage() {
                 </label>
               </div>
             </div>
-          </p>
+          </div>
         </div>
         <div
           className="clearAll"

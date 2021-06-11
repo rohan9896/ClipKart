@@ -67,10 +67,11 @@ function CategoriesPage() {
           {categories.map((category) => {
             return (
               <Link
+                key={category.id}
                 style={{ textDecoration: "none" }}
                 to={`/categories/${encodeURIComponent(category.category)}`}
               >
-                <div key={category.id} className="category-card">
+                <div className="category-card">
                   <div>
                     <LazyLoadImage
                       effect="black-and-white"
