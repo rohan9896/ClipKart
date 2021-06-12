@@ -8,7 +8,7 @@ import {
 import { getSortedData, getFilteredData } from "./filters-functions";
 import { actionTypes } from "./action-types";
 import axios from "axios";
-import {api_url} from "../utils/constants"
+import {apiUrl} from "../utils/constants"
 
 const CartWishListContext = createContext();
 
@@ -28,7 +28,7 @@ export default function CartWishListContextProvider({ children }) {
   useEffect(() => {
     (async () => {
       const resp = await axios.get(
-        api_url+"/products"
+        apiUrl+"/products"
       );
 
       if (resp.data.success) {
