@@ -1,0 +1,1 @@
+export const api_url = "https://e-comm-backend.rohangupta7.repl.co";

@@ -4,17 +4,22 @@ import "./Search.css";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Search() {
-
   const searchQuery = new URLSearchParams(useLocation().search);
 
-  const [inputVal, setInputVal] = useState(searchQuery.get('q') || '');
+  const [inputVal, setInputVal] = useState(searchQuery.get("q") || "");
   const { dispatch } = useCartWishlist();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    dispatch({ type: "SEARCH_PRODUCTS", payload: inputVal });
+    navigate(`/products/search?q=${inputVal}`);
+  };
 
   return (
     <>
       <div className="search__input">
         <input
+          onKeyPress={(e) => e.key === "Enter" && handleSearch()}
           value={inputVal}
           onChange={(e) => setInputVal(e.target.value)}
           type="text"
@@ -23,12 +28,9 @@ function Search() {
         />
         <button
           disabled={inputVal === ""}
-          onClick={() => {
-            dispatch({ type: "SEARCH_PRODUCTS", payload: inputVal });
-            navigate(`/products/search?q=${inputVal}`)
-          }}
+          onClick={() => handleSearch()}
           className="search-btn"
-          style={{cursor: inputVal ? "pointer" : "not-allowed"}}
+          style={{ cursor: inputVal ? "pointer" : "not-allowed" }}
         >
           <h3>
             <span role="img" aria-label="search">

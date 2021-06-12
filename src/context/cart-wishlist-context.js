@@ -8,8 +8,18 @@ import {
 import { getSortedData, getFilteredData } from "./filters-functions";
 import { actionTypes } from "./action-types";
 import axios from "axios";
+import {api_url} from "../utils/constants"
 
 const CartWishListContext = createContext();
+
+//initial state values
+const productsArr = [];
+const cartArr = [];
+const wishlistArr = [];
+const sortBy = "";
+const excludeOutOfStock = false;
+const newProductsOnly = false;
+const searchedProducts = [];
 
 export default function CartWishListContextProvider({ children }) {
   const [apiData, setApiData] = useState([]);
@@ -18,29 +28,20 @@ export default function CartWishListContextProvider({ children }) {
   useEffect(() => {
     (async () => {
       const resp = await axios.get(
-        "https://e-comm-backend.rohangupta7.repl.co/products"
+        api_url+"/products"
       );
 
       if (resp.data.success) {
         const productsData = resp.data.products;
-        const productsDataWithId = productsData.map(product => {
-          return {...product, id: product._id, _id: undefined};
-        })
+        const productsDataWithId = productsData.map((product) => {
+          return { ...product, id: product._id, _id: undefined };
+        });
         dispatch({ type: "SET_PRODUCTS_DATA", payload: productsDataWithId }); //for setting the state of products
         setApiData(productsData); //for storing the original products data recived from serevr
         setIsProductsReceived(true);
       }
     })();
   }, []);
-
-  //initial state values
-  const productsArr = [];
-  const cartArr = [];
-  const wishlistArr = [];
-  const sortBy = "";
-  const excludeOutOfStock = false;
-  const newProductsOnly = false;
-  const searchedProducts = [];
 
   //reducer func
   const cartWishlistReducerFunc = (state, action) => {
