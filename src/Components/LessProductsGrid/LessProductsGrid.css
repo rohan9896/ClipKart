@@ -1,0 +1,26 @@
+@import url("https://effortlessui.netlify.app/base.css");
+
+.ShowCaseSection__productsContainer {
+  margin: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ShowCaseSection__productsList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.card2 {
+  border: none;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.card2__brand {
+  margin: 0.5rem 0;
+  font-weight: 800;
+}

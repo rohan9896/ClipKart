@@ -1,0 +1,12 @@
+@import url("https://effortlessui.netlify.app/base.css");
+
+.search-btn {
+  background-color: #ebecf0;
+  border: none;
+}
+
+.search__input {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}

@@ -1,0 +1,23 @@
+.EmptyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  margin: 3rem;
+}
+
+.EmptyContainer > img {
+  width: 216px;
+}
+
+.EmptyContainer__line1 {
+  font-weight: 900;
+}
+
+@media screen and (min-width: 768px) {
+  .EmptyContainer > img {
+    width: 324px;
+  }
+}

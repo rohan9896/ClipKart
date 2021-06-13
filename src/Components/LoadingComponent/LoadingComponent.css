@@ -1,0 +1,11 @@
+.loadingComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.loadingComponent > h1 {
+    font-family: "Poppins", sans-serif;
+}

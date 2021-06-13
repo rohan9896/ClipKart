@@ -1,0 +1,55 @@
+@import url("https://effortlessui.netlify.app/base.css");
+
+footer {
+  font-family: "Poppins", sans-serif;
+  background-color: #111827;
+  color: white;
+}
+
+.Footer__container {
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+.Footer__storeFeatures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: solid 1px #9ca3af;
+}
+
+.Footer__storeFeatures__singleFeature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 600px) {
+  .Footer__storeFeatures {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+  }
+}
+
+.Footer__storeFeatures > div > img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.line1 {
+  font-weight: 700;
+}
+
+.Footer__footerLinks {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  cursor: pointer;
+}
+
+.Footer__footerLinks > p {
+  margin: 0.5rem 2rem;
+}

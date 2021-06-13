@@ -1,0 +1,27 @@
+@import url("https://effortlessui.netlify.app/base.css");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+
+.ecom__nav {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: xx-large;
+  background-color: #ebecf0;
+  border-bottom: 1px solid rgb(173, 170, 170);
+}
+
+.Nav3__logo {
+  margin: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+.Nav3__icons {
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.Nav3__icons > a {
+  margin: 0rem 1rem;
+}

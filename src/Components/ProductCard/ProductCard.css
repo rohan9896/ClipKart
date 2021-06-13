@@ -1,0 +1,44 @@
+@import url("https://effortlessui.netlify.app/base.css");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.card {
+  margin: 1.5rem;
+  justify-content: space-between;
+}
+
+.addToCart {
+  width: 100%;
+}
+
+.addToCart > button {
+  width: 100%;
+}
+
+.addToCart > button:hover {
+  background-color: rgb(9, 55, 73);
+}
+
+.productInfo {
+  font-family: "Poppins", sans-serif;
+}
+
+.name {
+  font-size: larger;
+  font-family: "Anton", sans-serif;
+}
+
+.description {
+  font-size: x-small;
+}
+
+.inStock {
+  font-weight: 800;
+}
+
+.addToCart {
+  justify-self: flex-end;
+}
+
+.ecomm__icon {
+  cursor: pointer;
+}

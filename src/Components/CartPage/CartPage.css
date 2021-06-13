@@ -1,0 +1,110 @@
+@import url("https://effortlessui.netlify.app/base.css");
+
+.CartPage__container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin: 1rem 2.5rem;
+  min-height: 80vh;
+}
+
+@media screen and (max-width: 720px) {
+  .CartPage__container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.Cart {
+  font-family: "Poppins", sans-serif;
+  margin: 1rem;
+}
+
+@media screen and (max-width: 660px) {
+  .Cart {
+    margin: 0.4rem;
+  }
+}
+
+.CartCard__container {
+  border: solid 1px rgb(219, 213, 213);
+  display: flex;
+  justify-content: space-between;
+  width: 550px;
+  max-width: 100%;
+  margin: 1rem 0;
+}
+
+.CartCard__ItemLeft {
+  display: flex;
+  margin: 1rem;
+}
+
+.CartCard__Middle {
+  display: grid;
+  grid-auto-rows: repeat(3, 1fr);
+}
+
+.CartCard__Details {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.CartCard__PlusMinusBtn {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+  align-items: center;
+}
+
+.CartCard__PlusMinusBtn > button {
+  border: none;
+  font-size: larger;
+}
+
+.remove-btn {
+  margin: 0.2rem 0.5rem;
+}
+
+.CartCard__ItemLeft > img {
+  width: 14rem;
+  height: inherit;
+}
+
+.CartCard__ItemRight {
+  margin: 1rem;
+}
+
+.CartPlaceOrder__container {
+  width: 300px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.CartPlaceOrder__top {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(242, 242, 243);
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+@media screen and (max-width: 560px) {
+  .CartPage__container {
+    margin: 1rem 0;
+  }
+  .CartCard__container {
+    width: 340px;
+  }
+  .CartCard__ItemLeft {
+    margin: 0.5rem;
+  }
+  .CartCard__ItemLeft > img {
+    width: 8rem;
+    height: inherit;
+  }
+}
