@@ -8,9 +8,9 @@ import {
 import { getSortedData, getFilteredData } from "./filters-functions";
 import { actionTypes } from "./action-types";
 import axios from "axios";
-import {apiUrl} from "../utils/constants"
+import { apiUrl } from "../utils/constants";
 
-const CartWishListContext = createContext();
+const DataContext = createContext();
 
 //initial state values
 const productsArr = [];
@@ -21,15 +21,13 @@ const excludeOutOfStock = false;
 const newProductsOnly = false;
 const searchedProducts = [];
 
-export default function CartWishListContextProvider({ children }) {
+export default function DataContextProvider({ children }) {
   const [apiData, setApiData] = useState([]);
   const [isProductsReceived, setIsProductsReceived] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const resp = await axios.get(
-        apiUrl+"/products"
-      );
+      const resp = await axios.get(apiUrl + "/products");
 
       if (resp.data.success) {
         const productsData = resp.data.products;
@@ -44,7 +42,7 @@ export default function CartWishListContextProvider({ children }) {
   }, []);
 
   //reducer func
-  const cartWishlistReducerFunc = (state, action) => {
+  const dataReducerFunc = (state, action) => {
     switch (action.type) {
       case actionTypes.SET_PRODUCTS_DATA:
         return {
@@ -175,7 +173,7 @@ export default function CartWishListContextProvider({ children }) {
     }
   };
 
-  const [state, dispatch] = useReducer(cartWishlistReducerFunc, {
+  const [state, dispatch] = useReducer(dataReducerFunc, {
     productsArr,
     cartArr,
     wishlistArr,
@@ -190,7 +188,7 @@ export default function CartWishListContextProvider({ children }) {
     state.searchedProducts.some((item) => item.id === id);
 
   return (
-    <CartWishListContext.Provider
+    <DataContext.Provider
       value={{
         state,
         dispatch, //state setter function
@@ -202,8 +200,8 @@ export default function CartWishListContextProvider({ children }) {
       }}
     >
       {children}
-    </CartWishListContext.Provider>
+    </DataContext.Provider>
   );
 }
 
-export const useCartWishlist = () => useContext(CartWishListContext);
+export const useData = () => useContext(DataContext);

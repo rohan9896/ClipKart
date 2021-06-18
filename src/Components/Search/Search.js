@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useCartWishlist } from "../../context/cart-wishlist-context";
+import { useData } from "../../context/data-context";
 import "./Search.css";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -7,7 +7,7 @@ function Search() {
   const searchQuery = new URLSearchParams(useLocation().search);
 
   const [inputVal, setInputVal] = useState(searchQuery.get("q") || "");
-  const { dispatch } = useCartWishlist();
+  const { dispatch } = useData();
   const navigate = useNavigate();
 
   const handleSearch = () => {

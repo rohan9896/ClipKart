@@ -1,10 +1,10 @@
 import React from "react";
-import { useCartWishlist } from "../../context/cart-wishlist-context";
+import { useData } from "../../context/data-context";
 import Heading from "../Heading/Heading";
 import "./WishListPage.css";
 
 function WishListPage() {
-  const { state, dispatch, containsInCart } = useCartWishlist();
+  const { state, dispatch, containsInCart } = useData();
 
   return (
     <>

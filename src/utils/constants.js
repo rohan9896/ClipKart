@@ -1,1 +1,1 @@
-export const apiUrl = "https://e-comm-backend.rohangupta7.repl.co";
+export const apiUrl = 'https://E-Comm-backend.rohangupta7.repl.co'; 

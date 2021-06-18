@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProductCard.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { useCartWishlist } from "../../context/cart-wishlist-context";
+import { useData } from "../../context/data-context";
 import { useNavigate } from "react-router-dom";
 
 function ProductCard({
@@ -16,7 +16,7 @@ function ProductCard({
   rating,
   wishlisted,
 }) {
-  const { dispatch, containsInCart } = useCartWishlist();
+  const { dispatch, containsInCart } = useData();
   let navigate = useNavigate();
 
   return (

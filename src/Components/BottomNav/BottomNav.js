@@ -1,10 +1,10 @@
 import React from "react";
 import "./BottomNav.css";
 import { NavLink } from "react-router-dom";
-import { useCartWishlist } from "../../context/cart-wishlist-context";
+import { useData } from "../../context/data-context";
 
 function BottomNav() {
-  const { state } = useCartWishlist();
+  const { state } = useData();
 
   const bottomNav = [
     {

@@ -1,10 +1,10 @@
 import React from "react";
-import { useCartWishlist } from "../../context/cart-wishlist-context";
+import { useData } from "../../context/data-context";
 import "./NoProductFoundPage.css";
 import { useNavigate } from "react-router-dom";
 
 function NoProductFoundPage() {
-  const { dispatch } = useCartWishlist();
+  const { dispatch } = useData();
   let navigate = useNavigate();
 
   return (

@@ -7,7 +7,7 @@ import WishListPage from "./WishlistPage/WishListPage";
 import ProductsPage from "./ProductsPage/ProductsPage";
 import CartPage from "./CartPage/CartPage";
 import EmptyPage from "./EmptyPage/EmptyPage";
-import { useCartWishlist } from "../context/cart-wishlist-context";
+import { useData } from "../context/data-context";
 import NoProductFoundPage from "./NoProductFoundPage/NoProductFoundPage";
 import CategoriesPage from "./CategoriesPage/CategoriesPage";
 import CategoryPageProducts from "./CategoryPageProducts/CategoryPageProducts";
@@ -19,7 +19,7 @@ import SignUpPage from "./LoginAndSignUpPages/SignUpPage";
 import AddressForm from "./ProfileComponents/AddressForm";
 
 function RouterComponent() {
-  const { state, isProductsReceived } = useCartWishlist();
+  const { state, isProductsReceived } = useData();
 
   return (
     <>
@@ -116,21 +116,25 @@ function RouterComponent() {
             </>
           }
         />
-        <Route path="/login" element={
-          <>
-            <NavBar />
-            <LoginPage />
-          </>
-        } />
-        <Route path="/signup" element={
-          <>
-            <NavBar />
-            <SignUpPage />
-          </>
-        } />
-        <Route path="/test" element={
-          <AddressForm />
-        } />
+        <Route
+          path="/login"
+          element={
+            <>
+              <NavBar />
+              <LoginPage />
+            </>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <>
+              <NavBar />
+              <SignUpPage />
+            </>
+          }
+        />
+        <Route path="/test" element={<AddressForm />} />
         <Route
           path="*"
           element={

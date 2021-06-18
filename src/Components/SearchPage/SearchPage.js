@@ -1,14 +1,14 @@
 import React from "react";
 import Search from "../Search/Search";
 import "./SearchPage.css";
-import { useCartWishlist } from "../../context/cart-wishlist-context";
+import { useData } from "../../context/data-context";
 import NavBar from "../NavBar/NavBar";
 import Heading from "../Heading/Heading";
 import ProductCard from "../ProductCard/ProductCard";
 import BottomNav from "../BottomNav/BottomNav";
 
 function SearchPage() {
-  const { state, containsInSearchedProducts } = useCartWishlist();
+  const { state, containsInSearchedProducts } = useData();
 
   return (
     <>

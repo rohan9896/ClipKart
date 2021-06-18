@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./ProductsPage.css";
 import Heading from "../Heading/Heading";
 import ProductCard from "../ProductCard/ProductCard";
-import { useCartWishlist } from "../../context/cart-wishlist-context";
+import { useData } from "../../context/data-context";
 import Search from "../Search/Search";
 
 function ProductsPage() {
-  const { state, dispatch, getSortedData, getFilteredData } = useCartWishlist();
+  const { state, dispatch, getSortedData, getFilteredData } = useData();
   const sortedData = getSortedData(state.productsArr, state.sortBy);
   const filteredData = getFilteredData(
     sortedData,

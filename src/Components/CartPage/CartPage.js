@@ -1,10 +1,10 @@
 import React from "react";
 import "./CartPage.css";
 import Heading from "../Heading/Heading";
-import { useCartWishlist } from "../../context/cart-wishlist-context";
+import { useData } from "../../context/data-context";
 
 function CartPage() {
-  const { state, dispatch } = useCartWishlist();
+  const { state, dispatch } = useData();
 
   const totalPriceInCart = state.cartArr?.reduce((accumulatePrice, product) => {
     return accumulatePrice + product.price * product.quantity;

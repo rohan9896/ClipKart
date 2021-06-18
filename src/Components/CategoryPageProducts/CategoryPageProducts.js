@@ -1,11 +1,11 @@
 import React from "react";
-import { useCartWishlist } from "../../context/cart-wishlist-context";
+import { useData } from "../../context/data-context";
 import Heading from "../Heading/Heading";
 import ProductCard from "../ProductCard/ProductCard";
 import "../ProductsPage/ProductsPage.css";
 
 function CategoryPageProducts({ categoryName }) {
-  const { state: {productsArr} } = useCartWishlist();
+  const { state: {productsArr} } = useData();
   return (
     <>
       <Heading text={categoryName} />

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./LoginAndSignupCard.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { apiUrl } from "../../utils/constants";
 
 function SignUpCard() {
   const navigate = useNavigate();
@@ -10,6 +12,7 @@ function SignUpCard() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
 
   const handlepassword = (e) => setPassword(e.target.value);
 
@@ -35,7 +38,8 @@ function SignUpCard() {
     return true;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (anyFieldEmpty()) {
       setErrorMsg("Field empty");
       return;
@@ -43,10 +47,28 @@ function SignUpCard() {
       setErrorMsg("");
     }
     //submit logic
-  };
+    try {
+      const resp = await axios.post(apiUrl+"/auth/signup", {
+        name,
+        email,
+        password
+      })
+  
+      console.log(resp)
+      if(!resp.data.success) {
+        setErrorMsg(resp.data.message);
+      } else {
+        setSuccessMsg("Account created!")
+        setTimeout(() => setSuccessMsg(''), 3000)
+      }
+    } catch (err) {
+      console.log({err});
+      setErrorMsg(err.name+" "+ err.message)
+    }
+  }; 
 
   return (
-    <div className="LoginAndSignupCard">
+    <form className="LoginAndSignupCard">
       <img
         className="faceavatar"
         src="https://raw.githubusercontent.com/rohan9896/Testing-for-CSS-component-library/381a3bddf3e3dd07d18515294bc568756a913b00/icons/ecomm/logo.svg"
@@ -82,6 +104,7 @@ function SignUpCard() {
         placeholder="Confirm Password"
       />
       {errorMsg && <p className="error">{errorMsg}</p>}
+      {successMsg && <p>{successMsg}</p>}
       <small
         onClick={() => navigate(`/login`)}
         className="signupAndLoginNavigator"
@@ -96,7 +119,7 @@ function SignUpCard() {
       >
         Sign Up
       </button>
-    </div>
+    </form>
   );
 }
 
